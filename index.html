@@ -4,11 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Official Person Ug Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+        }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+        .main-content {
+            transition: margin-left .5s;
+            padding: 20px;
+            margin-left: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Person Ug</h1>
-    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/da73dd1f-724e-4744-8a86-b2d093b587cd/ddtzbma-257e18ad-5f9a-4d09-895f-db50c0de8938.png" alt="Person Ug" width="350" height="350">
-    <p>PERSON UG GAMES</p>
-    <iframe src="https://scratch.mit.edu/projects/1159471561/embed" allowtransparency="true" width="285" height="260" frameborder="0" scrolling="no" allowfullscreen></iframe> <iframe src="https://scratch.mit.edu/projects/1159347373/embed" allowtransparency="true" width="285" height="260" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Games</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+
+    <div class="main-content">
+        <h1>Person Ug</h1>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/da73dd1f-724e-4744-8a86-b2d093b587cd/ddtzbma-257e18ad-5f9a-4d09-895f-db50c0de8938.png" alt="Person Ug" width="350" height="350">
+        <p>PERSON UG GAMES</p>
+        <iframe src="https://scratch.mit.edu/projects/1159471561/embed" allowtransparency="true" width="285" height="260" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        <iframe src="https://scratch.mit.edu/projects/1159347373/embed" allowtransparency="true" width="285" height="260" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.querySelector(".main-content").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.querySelector(".main-content").style.marginLeft = "0";
+        }
+    </script>
+
 </body>
 </html>
